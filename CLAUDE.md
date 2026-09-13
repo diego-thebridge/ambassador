@@ -86,7 +86,9 @@ ya redactadas. Diego aprueba o descarta; quien publica es él.
 ## Formulario
 
 Va a Formspree por `fetch`. El endpoint está en el `action` del `<form>` y es
-público por diseño — no es un secreto. Si aparece el marcador
+público por diseño — no es un secreto. Es el mismo formulario que usa
+`diego-thebridge.github.io`; el campo oculto `pagina=ambassador` distingue los
+envíos de esta página. Si aparece el marcador
 `PON_AQUI_TU_ID_FORMSPREE`, el formulario no está conectado todavía y el botón
 muestra un aviso en lugar de fallar en silencio.
 
