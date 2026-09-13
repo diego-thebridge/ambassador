@@ -1,7 +1,7 @@
 # Contexto del repo
 
-Página personal de Diego Díaz López como **Anthropic Education Ambassador** y
-**Claude Community Lead en Madrid**. Sitio estático de un solo fichero
+Página personal de Diego Díaz López como **Anthropic Education Ambassador** en
+Madrid. Es un único rol (no es "Community Lead"). Sitio estático de un solo fichero
 (`index.html`) publicado con GitHub Pages.
 
 No confundir con **claudemadrid.com**, que es la página de la comunidad. Esta es
