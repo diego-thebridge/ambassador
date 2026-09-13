@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diego Díaz López — Anthropic Education Ambassador, Madrid</title>
+<meta name="description" content="Recursos, materiales y charlas de Diego Díaz López, Anthropic Education Ambassador y Claude Community Lead en Madrid. Voluntario, no empleado de Anthropic.">
+<meta property="og:title" content="Diego Díaz López — Anthropic Education Ambassador, Madrid">
+<meta property="og:description" content="Recursos, materiales y charlas para quien está empezando con Claude. Madrid.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script src="noticias.js"></script>
+<style>
+  :root {
+    --bg: #faf9f5;
+    --fg: #141413;
+    --muted: #6b6a65;
+    --line: #e6e3da;
+    --accent: #b8512f;
+    --warm: #d97757;
+    --card: #ffffff;
+    --field: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14140f;
+      --fg: #f0eee6;
+      --muted: #9e9b91;
+      --line: #2b2a25;
+      --accent: #e8825c;
+      --warm: #d97757;
+      --card: #1b1a16;
+      --field: #201f1a;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    padding: 0 24px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 0 96px; }
+
+  /* Bilingüe: solo se muestra un idioma a la vez */
+  html[data-lang="es"] [data-l="en"] { display: none; }
+  html[data-lang="en"] [data-l="es"] { display: none; }
+
+  .serif { font-family: "Instrument Serif", Georgia, "Times New Roman", serif; font-weight: 400; }
+
+  /* ---------- Nav ---------- */
+  nav {
+    display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+    padding: 20px 0; font-size: 14px;
+  }
+  nav a { color: var(--muted); text-decoration: none; }
+  nav a:hover { color: var(--accent); }
+  .langswitch {
+    margin-left: auto; display: inline-flex; border: 1px solid var(--line);
+    border-radius: 100px; overflow: hidden; background: var(--card);
+  }
+  .langswitch button {
+    font: inherit; font-size: 12px; font-weight: 700; letter-spacing: 0.04em;
+    padding: 4px 11px; border: 0; background: transparent; color: var(--muted); cursor: pointer;
+  }
+  .langswitch button[aria-pressed="true"] { background: var(--warm); color: #fff; }
+
+  /* ---------- Hero ---------- */
+  header { padding: 34px 0 44px; border-bottom: 1px solid var(--line); }
+  .eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--warm); margin: 0 0 16px;
+  }
+  h1 {
+    font-size: clamp(38px, 8vw, 56px); line-height: 1.05; margin: 0 0 20px;
+    letter-spacing: -0.01em;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .lede { font-size: 18px; color: var(--muted); margin: 0 0 14px; max-width: 34em; }
+  .lede strong { color: var(--fg); font-weight: 600; }
+  .volunteer { font-size: 14px; color: var(--muted); margin: 20px 0 0; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .btn {
+    display: inline-block; font-size: 15px; font-weight: 600; text-decoration: none;
+    padding: 10px 20px; border-radius: 100px; border: 1px solid var(--warm);
+    color: #fff; background: var(--warm);
+  }
+  .btn:hover { filter: brightness(1.06); }
+  .btn.ghost { background: transparent; color: var(--accent); border-color: var(--line); }
+  .btn.ghost:hover { border-color: var(--warm); filter: none; }
+
+  /* ---------- Secciones ---------- */
+  section { padding-top: 56px; }
+  h2 {
+    font-size: clamp(26px, 5vw, 34px); line-height: 1.15; margin: 0 0 10px; letter-spacing: -0.01em;
+  }
+  .sub { color: var(--muted); margin: 0 0 26px; max-width: 36em; }
+  .prose p { margin: 0 0 15px; }
+  .prose p:last-child { margin-bottom: 0; }
+  .prose a, .sub a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+  .cards { display: grid; gap: 16px; }
+  @media (min-width: 620px) { .cards.two { grid-template-columns: 1fr 1fr; } }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px 24px;
+  }
+  .card h3 { margin: 0 0 8px; font-size: 17px; letter-spacing: -0.01em; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* ---------- Listas de recursos ---------- */
+  .res { list-style: none; padding: 0; margin: 0; }
+  .res li { border-top: 1px solid var(--line); }
+  .res li:last-child { border-bottom: 1px solid var(--line); }
+  .res a.item {
+    display: block; padding: 16px 0; text-decoration: none; color: inherit;
+  }
+  .res a.item:hover .name { color: var(--accent); }
+  .res .name { font-weight: 600; font-size: 16px; }
+  .res .name::after { content: " ↗"; font-weight: 400; color: var(--muted); font-size: 13px; }
+  .res .what { display: block; color: var(--muted); font-size: 14.5px; margin-top: 2px; }
+  .level {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--warm); border: 1px solid var(--line);
+    border-radius: 100px; padding: 1px 9px; margin-left: 8px; vertical-align: 1px;
+  }
+
+  /* ---------- Radar ---------- */
+  .radar { list-style: none; padding: 0; margin: 0; }
+  .radar li { border-top: 1px solid var(--line); padding: 18px 0; }
+  .radar li:last-child { border-bottom: 1px solid var(--line); }
+  .radar .when {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--warm); margin: 0 0 5px;
+  }
+  .radar .when .src { color: var(--muted); font-weight: 600; letter-spacing: 0.03em; }
+  .radar h3 { margin: 0 0 6px; font-size: 17px; line-height: 1.35; letter-spacing: -0.01em; }
+  .radar h3 a { color: inherit; text-decoration: none; }
+  .radar h3 a:hover { color: var(--accent); }
+  .radar h3 a::after { content: " ↗"; font-size: 12px; font-weight: 400; color: var(--muted); }
+  .radar p { margin: 0; color: var(--muted); font-size: 15px; }
+  .radar-note { color: var(--muted); font-size: 13px; margin: 16px 0 0; }
+
+  /* ---------- Charlas ---------- */
+  .talks { display: grid; gap: 26px; }
+  @media (min-width: 620px) { .talks { grid-template-columns: 1fr 1fr; } }
+  .talk { display: flex; flex-direction: column; }
+  .talk h3 { margin: 0 0 4px; font-size: 18px; letter-spacing: -0.01em; }
+  .talk .meta { color: var(--muted); font-size: 13.5px; margin: 0 0 10px; }
+  .talk p.desc { margin: 0 0 12px; font-size: 15px; color: var(--muted); }
+  .talk .actions { margin-top: auto; display: flex; gap: 16px; align-items: baseline; }
+  .talk .actions a, .talk .actions button {
+    font: inherit; font-size: 14px; font-weight: 600; color: var(--accent);
+    background: none; border: 0; padding: 0; cursor: pointer; text-decoration: none;
+  }
+  .talk .actions a:hover, .talk .actions button:hover { text-decoration: underline; }
+
+  .cover {
+    display: block; margin: 0 0 14px; padding: 0; border: 1px solid var(--line);
+    border-radius: 10px; overflow: hidden; background: var(--card); cursor: pointer;
+    width: 100%; line-height: 0;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .cover img { width: 100%; height: auto; display: block; }
+  .cover:hover, .cover:focus-visible {
+    transform: translateY(-2px); border-color: var(--warm);
+    box-shadow: 0 8px 24px rgba(20, 20, 19, 0.10);
+  }
+  .cover:focus-visible { outline: 2px solid var(--warm); outline-offset: 2px; }
+
+  /* ---------- Visor de PDF ---------- */
+  dialog#viewer {
+    width: min(1100px, 94vw); height: min(88vh, 900px); padding: 0; border: 0;
+    border-radius: 14px; background: var(--card); color: var(--fg); overflow: hidden;
+  }
+  dialog#viewer::backdrop { background: rgba(20, 20, 19, 0.62); backdrop-filter: blur(2px); }
+  .viewer-bar {
+    display: flex; align-items: center; gap: 14px; padding: 12px 16px;
+    border-bottom: 1px solid var(--line); font-size: 14px;
+  }
+  .viewer-bar strong { font-weight: 600; font-size: 15px; }
+  .viewer-bar .spacer { margin-left: auto; }
+  .viewer-bar a, .viewer-bar button {
+    font: inherit; font-size: 14px; font-weight: 600; color: var(--accent);
+    background: none; border: 0; padding: 4px 6px; cursor: pointer; text-decoration: none;
+    border-radius: 6px;
+  }
+  .viewer-bar button:hover, .viewer-bar a:hover { background: var(--bg); }
+  dialog#viewer iframe { width: 100%; height: calc(100% - 50px); border: 0; display: block; }
+
+  /* ---------- Formulario ---------- */
+  form { margin: 0; }
+  .row { display: grid; gap: 16px; margin-bottom: 16px; }
+  @media (min-width: 620px) { .row.two { grid-template-columns: 1fr 1fr; } }
+  label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+  input, select, textarea {
+    width: 100%; font: inherit; font-size: 15px; color: var(--fg);
+    background: var(--field); border: 1px solid var(--line); border-radius: 9px; padding: 11px 13px;
+  }
+  textarea { min-height: 120px; resize: vertical; }
+  input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--warm); outline-offset: 1px; border-color: var(--warm);
+  }
+  .hp { position: absolute; left: -9999px; }
+  button.submit {
+    font: inherit; font-size: 15px; font-weight: 600; color: #fff; background: var(--warm);
+    border: 0; border-radius: 100px; padding: 12px 26px; cursor: pointer;
+  }
+  button.submit:hover { filter: brightness(1.06); }
+  button.submit[disabled] { opacity: 0.6; cursor: default; }
+  .formnote { color: var(--muted); font-size: 13px; margin: 14px 0 0; }
+  .formmsg { font-size: 15px; font-weight: 600; margin: 16px 0 0; }
+  .formmsg.ok { color: #2f7a43; }
+  .formmsg.err { color: var(--accent); }
+  @media (prefers-color-scheme: dark) { .formmsg.ok { color: #5fc77f; } }
+
+  footer {
+    margin-top: 64px; padding-top: 26px; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: 14px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer p { margin: 0 0 8px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <a href="#recursos"><span data-l="es">Recursos</span><span data-l="en">Resources</span></a>
+    <a href="#radar" id="nav-radar" hidden><span data-l="es">Radar</span><span data-l="en">Radar</span></a>
+    <a href="#contacto"><span data-l="es">Contacto</span><span data-l="en">Contact</span></a>
+    <a href="#charlas"><span data-l="es">Mis charlas</span><span data-l="en">My talks</span></a>
+    <div class="langswitch" role="group" aria-label="Idioma / Language">
+      <button type="button" data-setlang="es" aria-pressed="true">ES</button>
+      <button type="button" data-setlang="en" aria-pressed="false">EN</button>
+    </div>
+  </nav>
+
+  <header>
+    <p class="eyebrow">
+      <span data-l="es">Anthropic Education Ambassador · Madrid</span>
+      <span data-l="en">Anthropic Education Ambassador · Madrid</span>
+    </p>
+
+    <h1 class="serif">
+      <span data-l="es">Hola, soy Diego.<br>Te ayudo a <em>empezar</em> con Claude.</span>
+      <span data-l="en">Hi, I'm Diego.<br>I help you <em>get started</em> with Claude.</span>
+    </h1>
+
+    <p class="lede" data-l="es">Soy <strong>Anthropic Education Ambassador</strong> y
+    <strong>Claude Community Lead en Madrid</strong>. Dedico parte de mi tiempo a que la gente de
+    aquí — docentes, estudiantes, gente de producto, desarrolladores — pase de "he probado un chat"
+    a construir algo que le sirva de verdad.</p>
+    <p class="lede" data-l="en">I'm an <strong>Anthropic Education Ambassador</strong> and the
+    <strong>Claude Community Lead in Madrid</strong>. I spend part of my time helping people here —
+    teachers, students, product folk, developers — get from "I tried a chatbot once" to building
+    something that actually helps them.</p>
+
+    <p class="lede" data-l="es">Esta página es mi cajón: lo que recomiendo a quien me pregunta por
+    dónde empezar, mis materiales y mis charlas. Todo abierto y gratis.</p>
+    <p class="lede" data-l="en">This page is my shelf: what I point people to when they ask where to
+    start, plus my own materials and talks. All open, all free.</p>
+
+    <div class="cta">
+      <a class="btn" href="#recursos"><span data-l="es">Ver los recursos</span><span data-l="en">See the resources</span></a>
+      <a class="btn ghost" href="#contacto"><span data-l="es">Escríbeme</span><span data-l="en">Get in touch</span></a>
+    </div>
+
+    <p class="volunteer">
+      <span data-l="es">Los dos roles son <strong>voluntarios</strong>: no trabajo en Anthropic y lo
+      que digo aquí es mío. Los eventos de la comunidad en Madrid se organizan y se anuncian en
+      <a href="https://claudemadrid.com">claudemadrid.com</a>.</span>
+      <span data-l="en">Both roles are <strong>volunteer</strong>: I don't work at Anthropic and the
+      opinions here are my own. Community events in Madrid are organised and announced at
+      <a href="https://claudemadrid.com">claudemadrid.com</a>.</span>
+    </p>
+  </header>
+
+  <!-- =================== RECURSOS =================== -->
+  <section id="recursos">
+    <h2 class="serif"><span data-l="es">Por dónde empezar</span><span data-l="en">Where to start</span></h2>
+    <p class="sub">
+      <span data-l="es">Lo mismo que respondo por WhatsApp cada semana, ordenado. Empieza arriba y
+      baja solo si te quedas con ganas.</span>
+      <span data-l="en">The same answer I give on WhatsApp every week, in order. Start at the top and
+      keep going only if you want more.</span>
+    </p>
+
+    <ul class="res">
+      <li>
+        <a class="item" href="https://www.anthropic.com/learn">
+          <span class="name">Anthropic Academy</span><span class="level" data-l="es">Empezar</span><span class="level" data-l="en">Start here</span>
+          <span class="what" data-l="es">Cursos gratuitos y oficiales: uso cotidiano, Claude Code, la API, MCP. Si solo vas a abrir un enlace de esta lista, este.</span>
+          <span class="what" data-l="en">Free official courses: everyday use, Claude Code, the API, MCP. If you only open one link on this page, this one.</span>
+        </a>
+      </li>
+      <li>
+        <a class="item" href="https://claude.com/solutions/education">
+          <span class="name">Claude for Education</span><span class="level" data-l="es">Docentes</span><span class="level" data-l="en">Teachers</span>
+          <span class="what" data-l="es">Learning mode, programas para campus y qué obtiene una institución. El punto de partida si das clase.</span>
+          <span class="what" data-l="en">Learning mode, campus programmes, and what an institution actually gets. The starting point if you teach.</span>
+        </a>
+      </li>
+      <li>
+        <a class="item" href="https://docs.claude.com">
+          <span class="name">Claude Docs</span><span class="level" data-l="es">Referencia</span><span class="level" data-l="en">Reference</span>
+          <span class="what" data-l="es">La documentación: API, prompting, agentes, Claude Code, skills. Es sorprendentemente legible.</span>
+          <span class="what" data-l="en">The documentation: API, prompting, agents, Claude Code, skills. Surprisingly readable.</span>
+        </a>
+      </li>
+      <li>
+        <a class="item" href="https://github.com/anthropics/claude-cookbooks">
+          <span class="name">Claude Cookbooks</span><span class="level" data-l="es">Construir</span><span class="level" data-l="en">Build</span>
+          <span class="what" data-l="es">Notebooks que funcionan: RAG, tool use, evaluación, visión. Para dejar de leer y ejecutar algo.</span>
+          <span class="what" data-l="en">Notebooks that run: RAG, tool use, evaluation, vision. For when you want to stop reading and execute something.</span>
+        </a>
+      </li>
+      <li>
+        <a class="item" href="https://github.com/anthropics/skills">
+          <span class="name">Agent Skills</span><span class="level" data-l="es">Construir</span><span class="level" data-l="en">Build</span>
+          <span class="what" data-l="es">El repositorio público de skills. La mejor forma de entender cómo se escribe una es leer las que ya están.</span>
+          <span class="what" data-l="en">The public skills repo. The best way to understand how one is written is to read the ones that exist.</span>
+        </a>
+      </li>
+      <li>
+        <a class="item" href="https://modelcontextprotocol.io">
+          <span class="name">Model Context Protocol</span><span class="level" data-l="es">Avanzado</span><span class="level" data-l="en">Advanced</span>
+          <span class="what" data-l="es">La especificación y los SDK. Si te quedaste con hambre después de mi charla de MCP, esto es lo siguiente.</span>
+          <span class="what" data-l="en">The spec and the SDKs. If my MCP talk left you wanting more, this is the next step.</span>
+        </a>
+      </li>
+      <li>
+        <a class="item" href="https://claudemadrid.com">
+          <span class="name">Claude Community Madrid</span><span class="level" data-l="es">Presencial</span><span class="level" data-l="en">In person</span>
+          <span class="what" data-l="es">Los encuentros de aquí: meetups, workshops y build days. Gratuitos y abiertos a todo el mundo.</span>
+          <span class="what" data-l="en">The local gatherings: meetups, workshops and build days. Free and open to everyone.</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <!-- =================== RADAR =================== -->
+  <section id="radar" hidden>
+    <h2 class="serif"><span data-l="es">Radar</span><span data-l="en">Radar</span></h2>
+    <p class="sub">
+      <span data-l="es">Lo que voy leyendo sobre IA, educación y regulación, con una frase mía de por
+      qué importa. No es un boletín ni pretende ser exhaustivo: es mi filtro.</span>
+      <span data-l="en">What I'm reading on AI, education and regulation, with a line from me on why
+      it matters. Not a newsletter and not exhaustive: it's my filter.</span>
+    </p>
+    <ul class="radar" id="radar-list"></ul>
+    <p class="radar-note">
+      <span data-l="es">Última actualización: <span id="radar-updated"></span>. Las opiniones son mías.</span>
+      <span data-l="en">Last updated: <span id="radar-updated-en"></span>. The opinions are mine.</span>
+    </p>
+  </section>
+
+  <!-- =================== CONTACTO =================== -->
+  <section id="contacto">
+    <h2 class="serif"><span data-l="es">Escríbeme</span><span data-l="en">Get in touch</span></h2>
+    <p class="sub">
+      <span data-l="es">Una charla para tu centro o tu empresa, dudas de alguien que empieza, o una
+      idea para la comunidad. Leo todo y respondo yo.</span>
+      <span data-l="en">A talk for your school or company, a question from someone starting out, or an
+      idea for the community. I read everything and I answer myself.</span>
+    </p>
+
+    <div class="card">
+      <!-- ==========================================================
+           CONFIGURACIÓN: crea un formulario gratis en formspree.io y
+           pega aquí su endpoint en lugar de PON_AQUI_TU_ID_FORMSPREE.
+           No hay nada secreto: el endpoint de Formspree es público.
+           ========================================================== -->
+      <form id="contact-form" action="https://formspree.io/f/PON_AQUI_TU_ID_FORMSPREE" method="POST">
+
+        <div class="row">
+          <div>
+            <label for="topic"><span data-l="es">¿Sobre qué escribes?</span><span data-l="en">What is this about?</span></label>
+            <select id="topic" name="asunto" required>
+              <option id="topic-placeholder" value="" selected disabled>…</option>
+              <option data-l="es" value="Charla o workshop">Una charla o un workshop</option>
+              <option data-l="en" value="Talk or workshop">A talk or a workshop</option>
+              <option data-l="es" value="Educación / centro educativo">Educación: soy docente o llevo un centro</option>
+              <option data-l="en" value="Education / school">Education: I teach or I run a school</option>
+              <option data-l="es" value="Empiezo con Claude">Estoy empezando y tengo dudas</option>
+              <option data-l="en" value="Getting started with Claude">I'm starting out and I have questions</option>
+              <option data-l="es" value="Idea para la comunidad">Una idea para la comunidad de Madrid</option>
+              <option data-l="en" value="Community idea">An idea for the Madrid community</option>
+              <option data-l="es" value="Otra cosa">Otra cosa</option>
+              <option data-l="en" value="Something else">Something else</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row two">
+          <div>
+            <label for="name"><span data-l="es">Nombre</span><span data-l="en">Name</span></label>
+            <input id="name" name="nombre" type="text" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="org">
+              <span data-l="es">Dónde trabajas o estudias <em>(opcional)</em></span>
+              <span data-l="en">Where you work or study <em>(optional)</em></span>
+            </label>
+            <input id="org" name="organizacion" type="text" autocomplete="organization">
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label for="message"><span data-l="es">Cuéntame</span><span data-l="en">Tell me</span></label>
+            <textarea id="message" name="mensaje" required></textarea>
+          </div>
+        </div>
+
+        <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button class="submit" type="submit">
+          <span data-l="es">Enviar</span><span data-l="en">Send</span>
+        </button>
+
+        <p class="formnote">
+          <span data-l="es">Uso tus datos solo para responderte. No hay lista de correo, no van a
+          ningún CRM y no los comparto con nadie.</span>
+          <span data-l="en">I use your details only to reply. No mailing list, no CRM, shared with
+          no one.</span>
+        </p>
+        <p class="formmsg" id="form-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- =================== MIS MATERIALES =================== -->
+  <section id="charlas">
+    <h2 class="serif"><span data-l="es">Mis materiales y charlas</span><span data-l="en">My materials and talks</span></h2>
+    <p class="sub">
+      <span data-l="es">Las diapositivas tal como se presentaron, en abierto. Pincha en cualquiera
+      para verla aquí mismo. Libres de reutilizar citando la fuente — si las usas en una clase o en
+      una charla, me encantará saberlo.</span>
+      <span data-l="en">The slides as presented, in the open. Click any of them to read it right
+      here. Free to reuse with attribution — if you use them in a class or a talk, I'd love to hear
+      about it.</span>
+    </p>
+
+    <div class="talks">
+      <article class="talk">
+        <button class="cover" type="button" data-pdf="https://diego-thebridge.github.io/reorganization-advantage.pdf"
+                data-title-es="The Reorganization Advantage" data-title-en="The Reorganization Advantage">
+          <img src="covers/reorganization-advantage.jpg" width="600" height="338" loading="lazy" decoding="async"
+               alt="">
+        </button>
+        <h3>The Reorganization Advantage</h3>
+        <p class="meta"><span data-l="es">Público corporativo · 2026</span><span data-l="en">Enterprise audiences · 2026</span></p>
+        <p class="desc" data-l="es">La capacidad frontera cuesta céntimos vía API, así que el acceso ha dejado de ser una ventaja. Lo que separa a las empresas que despegan de las que no notan nada es organizativo: incentivos, permiso y capacidad.</p>
+        <p class="desc" data-l="en">Frontier capability costs cents through an API, so access has stopped being an advantage. What separates the companies that take off from the ones that notice nothing is organisational: incentives, permission and capability.</p>
+        <div class="actions">
+          <button type="button" class="cover-open" data-pdf="https://diego-thebridge.github.io/reorganization-advantage.pdf"
+                  data-title-es="The Reorganization Advantage" data-title-en="The Reorganization Advantage">
+            <span data-l="es">Ver aquí</span><span data-l="en">View here</span>
+          </button>
+          <a href="https://diego-thebridge.github.io/reorganization-advantage.pdf" download>
+            <span data-l="es">Descargar PDF</span><span data-l="en">Download PDF</span>
+          </a>
+        </div>
+      </article>
+      <article class="talk">
+        <button class="cover" type="button" data-pdf="https://diego-thebridge.github.io/agents-and-mcp-codemotion.pdf"
+                data-title-es="Agents and MCP" data-title-en="Agents and MCP">
+          <img src="covers/agents-and-mcp-codemotion.jpg" width="600" height="338" loading="lazy" decoding="async"
+               alt="">
+        </button>
+        <h3>Agents and MCP</h3>
+        <p class="meta">Codemotion Madrid · 2025</p>
+        <p class="desc" data-l="es">Qué es realmente un agente, el bucle ReAct, tool calling y memoria. Después el Model Context Protocol: arquitectura cliente-servidor, JSON-RPC 2.0, ciclo de vida, OAuth y dónde fallan en seguridad los servidores MCP.</p>
+        <p class="desc" data-l="en">What an agent actually is, the ReAct loop, tool calling and memory. Then the Model Context Protocol: client–server architecture, JSON-RPC 2.0, connection lifecycle, OAuth, and where MCP servers get their security wrong.</p>
+        <div class="actions">
+          <button type="button" class="cover-open" data-pdf="https://diego-thebridge.github.io/agents-and-mcp-codemotion.pdf"
+                  data-title-es="Agents and MCP" data-title-en="Agents and MCP">
+            <span data-l="es">Ver aquí</span><span data-l="en">View here</span>
+          </button>
+          <a href="https://diego-thebridge.github.io/agents-and-mcp-codemotion.pdf" download>
+            <span data-l="es">Descargar PDF</span><span data-l="en">Download PDF</span>
+          </a>
+        </div>
+      </article>
+      <article class="talk">
+        <button class="cover" type="button" data-pdf="https://diego-thebridge.github.io/building-with-claude-supabase.pdf"
+                data-title-es="Construyendo aplicaciones con Claude" data-title-en="Building applications with Claude">
+          <img src="covers/building-with-claude-supabase.jpg" width="600" height="338" loading="lazy" decoding="async"
+               alt="">
+        </button>
+        <h3><span data-l="es">Construyendo aplicaciones con Claude</span><span data-l="en">Building applications with Claude</span></h3>
+        <p class="meta">Supabase Madrid meetup · Q4 2025</p>
+        <p class="desc" data-l="es">Una construcción en directo: un dashboard partiendo de un diseño de Figma, orquestando tres servidores MCP — Figma, Playwright y Supabase.</p>
+        <p class="desc" data-l="en">A live build: a dashboard starting from a Figma design, orchestrating three MCP servers — Figma, Playwright and Supabase.</p>
+        <div class="actions">
+          <button type="button" class="cover-open" data-pdf="https://diego-thebridge.github.io/building-with-claude-supabase.pdf"
+                  data-title-es="Construyendo aplicaciones con Claude" data-title-en="Building applications with Claude">
+            <span data-l="es">Ver aquí</span><span data-l="en">View here</span>
+          </button>
+          <a href="https://diego-thebridge.github.io/building-with-claude-supabase.pdf" download>
+            <span data-l="es">Descargar PDF</span><span data-l="en">Download PDF</span>
+          </a>
+        </div>
+      </article>
+      <article class="talk">
+        <button class="cover" type="button" data-pdf="https://diego-thebridge.github.io/future-of-software.pdf"
+                data-title-es="El futuro del software" data-title-en="The Future of Software">
+          <img src="covers/future-of-software.jpg" width="600" height="338" loading="lazy" decoding="async"
+               alt="">
+        </button>
+        <h3><span data-l="es">El futuro del software</span><span data-l="en">The Future of Software</span></h3>
+        <p class="meta">AI Network · 2025</p>
+        <p class="desc" data-l="es">La paradoja de Jevons aplicada al software: cuando el coste de producir código se desploma, la demanda no cae, se mueve.</p>
+        <p class="desc" data-l="en">Jevons' paradox applied to software: when the cost of producing code collapses, demand does not fall, it moves.</p>
+        <div class="actions">
+          <button type="button" class="cover-open" data-pdf="https://diego-thebridge.github.io/future-of-software.pdf"
+                  data-title-es="El futuro del software" data-title-en="The Future of Software">
+            <span data-l="es">Ver aquí</span><span data-l="en">View here</span>
+          </button>
+          <a href="https://diego-thebridge.github.io/future-of-software.pdf" download>
+            <span data-l="es">Descargar PDF</span><span data-l="en">Download PDF</span>
+          </a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <dialog id="viewer" aria-label="Visor de diapositivas">
+    <div class="viewer-bar">
+      <strong id="viewer-title"></strong>
+      <span class="spacer"></span>
+      <a id="viewer-download" href="#" download>
+        <span data-l="es">Descargar</span><span data-l="en">Download</span>
+      </a>
+      <a id="viewer-tab" href="#" target="_blank" rel="noopener">
+        <span data-l="es">Abrir en pestaña</span><span data-l="en">Open in a tab</span>
+      </a>
+      <button type="button" id="viewer-close" aria-label="Cerrar">✕</button>
+    </div>
+    <iframe id="viewer-frame" title="PDF" src="about:blank"></iframe>
+  </dialog>
+
+  <footer>
+    <p>
+      <span data-l="es">Las charlas se dan en español. Libres de reutilizar citando la fuente.</span>
+      <span data-l="en">Talks are delivered in Spanish. Free to reuse with attribution.</span>
+    </p>
+    <p>
+      <a href="https://www.linkedin.com/in/diegodl">LinkedIn</a> ·
+      <a href="mailto:diegodl@gmail.com">diegodl@gmail.com</a> ·
+      <a href="https://claudemadrid.com">claudemadrid.com</a>
+    </p>
+    <p>
+      <span data-l="es">Página personal. Soy Ambassador voluntario del programa Claude Community; no
+      hablo en nombre de Anthropic.</span>
+      <span data-l="en">Personal site. I'm a volunteer Ambassador in the Claude Community programme;
+      I don't speak for Anthropic.</span>
+    </p>
+  </footer>
+
+</div>
+
+<script>
+  // ---------- Idioma ----------
+  (function () {
+    var STORE = 'ddl-lang';
+    var buttons = document.querySelectorAll('[data-setlang]');
+
+    function apply(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      buttons.forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.setlang === lang));
+      });
+      // Los <option> no se pueden ocultar con CSS de forma fiable en todos los
+      // navegadores: se desactivan los del otro idioma.
+      document.querySelectorAll('select option[data-l]').forEach(function (o) {
+        o.hidden = o.dataset.l !== lang;
+        o.disabled = o.dataset.l !== lang;
+      });
+      var ph = document.getElementById('topic-placeholder');
+      if (ph) ph.textContent = lang === 'es' ? 'Elige una opción…' : 'Choose one…';
+    }
+
+    var saved = null;
+    try { saved = localStorage.getItem(STORE); } catch (e) {}
+    var initial = saved || ((navigator.language || 'es').toLowerCase().indexOf('en') === 0 ? 'en' : 'es');
+    apply(initial);
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () {
+        apply(b.dataset.setlang);
+        try { localStorage.setItem(STORE, b.dataset.setlang); } catch (e) {}
+      });
+    });
+  })();
+
+  // ---------- Formulario ----------
+  (function () {
+    var form = document.getElementById('contact-form');
+    var msg = document.getElementById('form-msg');
+    if (!form) return;
+
+    var T = {
+      sending: { es: 'Enviando…', en: 'Sending…' },
+      ok: { es: '¡Gracias! Recibido. Te respondo en breve.', en: 'Thanks — got it. I will reply shortly.' },
+      err: { es: 'Algo ha fallado. Escríbeme a diegodl@gmail.com.', en: 'Something went wrong. Please email diegodl@gmail.com.' },
+      setup: { es: 'El formulario aún no está conectado — escríbeme a diegodl@gmail.com.', en: 'The form is not connected yet — email diegodl@gmail.com.' }
+    };
+    function t(k) { return T[k][document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es']; }
+    function say(text, cls) { msg.textContent = text; msg.className = 'formmsg ' + (cls || ''); }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (form.action.indexOf('PON_AQUI_TU_ID_FORMSPREE') !== -1) {
+        say(t('setup'), 'err');
+        return;
+      }
+
+      var button = form.querySelector('button.submit');
+      button.disabled = true;
+      say(t('sending'));
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      })
+        .then(function (r) { if (!r.ok) throw new Error('bad status'); form.reset(); say(t('ok'), 'ok'); })
+        .catch(function () { say(t('err'), 'err'); })
+        .finally(function () { button.disabled = false; });
+    });
+  })();
+
+  // ---------- Visor de diapositivas ----------
+  (function () {
+    var dlg = document.getElementById('viewer');
+    var frame = document.getElementById('viewer-frame');
+    var titleEl = document.getElementById('viewer-title');
+    var dl = document.getElementById('viewer-download');
+    var tab = document.getElementById('viewer-tab');
+    if (!dlg || !dlg.showModal) return;   // navegador antiguo: los enlaces siguen funcionando
+
+    // Los navegadores de móvil no dibujan un PDF dentro de un iframe: ahí se abre
+    // en una pestaña en vez de en el visor.
+    function inlineWorks() {
+      return window.matchMedia('(min-width: 760px)').matches &&
+             !/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    function open(btn) {
+      var url = btn.dataset.pdf;
+      var lang = document.documentElement.getAttribute('data-lang') === 'en' ? 'en' : 'es';
+      if (!inlineWorks()) { window.open(url, '_blank', 'noopener'); return; }
+      titleEl.textContent = lang === 'en' ? btn.dataset.titleEn : btn.dataset.titleEs;
+      dl.href = url;
+      tab.href = url;
+      frame.src = url + '#view=FitH';
+      dlg.showModal();
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      frame.src = 'about:blank';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.cover, .cover-open').forEach(function (b) {
+      b.addEventListener('click', function () { open(b); });
+    });
+    document.getElementById('viewer-close').addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('close', close);
+    dlg.addEventListener('click', function (e) {
+      // Clic en el fondo (fuera de la caja) cierra
+      var r = dlg.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) {
+        dlg.close();
+      }
+    });
+  })();
+
+  // ---------- Radar ----------
+  // El contenido vive en noticias.js (window.RADAR), cargado con una etiqueta
+  // <script>. Sin fetch a propósito: así la sección se ve igual en GitHub Pages
+  // y abriendo el fichero en local. Si noticias.js falta, la sección no aparece
+  // y el resto de la página sigue funcionando.
+  (function () {
+    var section = document.getElementById('radar');
+    var list = document.getElementById('radar-list');
+    var data = window.RADAR;
+    if (!section || !list || !data) return;
+
+    var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto',
+                 'septiembre','octubre','noviembre','diciembre'];
+    var MONTHS = ['January','February','March','April','May','June','July','August',
+                  'September','October','November','December'];
+
+    function fecha(iso, lang) {
+      var p = String(iso).split('-');
+      if (p.length !== 3) return iso;
+      var d = parseInt(p[2], 10), m = parseInt(p[1], 10) - 1;
+      return lang === 'en' ? MONTHS[m] + ' ' + d + ', ' + p[0]
+                           : d + ' ' + MESES[m] + ' ' + p[0];
+    }
+
+    function esc(t) {
+      var d = document.createElement('div');
+      d.textContent = t == null ? '' : t;
+      return d.innerHTML;
+    }
+
+    var items = (data.entradas || []).filter(function (e) { return e.url && e.titulo; });
+    if (!items.length) return;
+
+    list.innerHTML = items.map(function (e) {
+      return '<li>' +
+        '<p class="when">' +
+          '<span data-l="es">' + esc(fecha(e.fecha, 'es')) + '</span>' +
+          '<span data-l="en">' + esc(fecha(e.fecha, 'en')) + '</span>' +
+          (e.fuente ? ' <span class="src">· ' + esc(e.fuente) + '</span>' : '') +
+        '</p>' +
+        '<h3><a href="' + esc(e.url) + '" rel="noopener">' + esc(e.titulo) + '</a></h3>' +
+        '<p data-l="es">' + esc(e.es || '') + '</p>' +
+        '<p data-l="en">' + esc(e.en || e.es || '') + '</p>' +
+      '</li>';
+    }).join('');
+
+    if (data.actualizado) {
+      var a = document.getElementById('radar-updated');
+      var b = document.getElementById('radar-updated-en');
+      if (a) a.textContent = fecha(data.actualizado, 'es');
+      if (b) b.textContent = fecha(data.actualizado, 'en');
+    }
+
+    section.hidden = false;
+    var nav = document.getElementById('nav-radar');
+    if (nav) nav.hidden = false;
+  })();
+</script>
+</body>
+</html>
