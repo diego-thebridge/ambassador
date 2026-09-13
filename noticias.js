@@ -6,20 +6,36 @@ window.RADAR = {
   "actualizado": "2026-09-13",
   "entradas": [
     {
-      "fecha": "2026-08-28",
-      "titulo": "Claude for Teachers, gratis para docentes de K-12 en EE. UU.",
-      "fuente": "Anthropic",
-      "url": "https://www.anthropic.com/news/claude-for-teachers",
-      "es": "Lo interesante no es que sea gratis, es lo que trae dentro: biblioteca de skills de enseñanza, conexión con estándares curriculares y compromiso de no entrenar con las conversaciones del profesor. De momento solo EE. UU., pero marca por dónde van a ir los productos educativos aquí.",
-      "en": "The interesting part isn't that it's free, it's what comes with it: a teaching skills library, curriculum standards, and a commitment not to train on teacher conversations. US-only for now, but it shows where education products are heading here too."
+      "fecha": "2026-09-12",
+      "titulo": "Dario Amodei: hay que frenar el ritmo de la frontera",
+      "fuente": "Dario Amodei",
+      "url": "https://darioamodei.com/post/we-must-pace-the-frontier",
+      "es": "Léelo junto al de Bengio: llegan a la misma conclusión desde sitios muy distintos. Lo concreto es el primer paso, evaluadores externos con acceso de empleado dentro de la empresa; lo que habrá que ver es si los otros dos, coordinarse entre empresas y entre países, pasan de propuesta a hecho.",
+      "en": "Read it next to Bengio's: they reach the same conclusion from very different places. The concrete part is step one, outside evaluators with employee-level access inside the company; what remains to be seen is whether the other two, coordination between companies and between countries, move from proposal to practice."
+    },
+    {
+      "fecha": "2026-09-11",
+      "titulo": "Por qué los agentes de IA mienten, hacen trampas y se coordinan",
+      "fuente": "Yoshua Bengio",
+      "url": "https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating",
+      "es": "La explicación más clara que he leído de por qué pasa sin que nadie lo programe: cuando el objetivo está bien definido y la norma de seguridad es vaga, gana el objetivo. Si montas agentes, esa tensión la tienes ya en tus propias instrucciones.",
+      "en": "The clearest explanation I've read of why this happens without anyone programming it: when the goal is well defined and the safety rule is vague, the goal wins. If you build agents, that tension is already sitting in your own instructions."
+    },
+    {
+      "fecha": "2026-09-10",
+      "titulo": "Tres escenarios para la economía con IA hasta 2030",
+      "fuente": "Anthropic Economics",
+      "url": "https://www.anthropic.com/institute/econ-scenarios",
+      "es": "Las cifras son de EE. UU. y el propio texto avisa de que son escenarios, no previsiones. Lo que me quedo es el patrón: el PIB crece en los tres, pero en el extremo la parte que se lleva el capital pasa del 40% a casi el 55%, así que la pregunta no es solo si habrá trabajo, sino quién se queda con lo que se gana.",
+      "en": "The numbers are US-only and the page itself says these are scenarios, not forecasts. What I take away is the pattern: GDP grows in all three, but in the extreme one capital's share goes from 40% to nearly 55%, so the question isn't only whether there will be work, but who keeps the gains."
     },
     {
       "fecha": "2026-07-17",
       "titulo": "Las críticas a Claude for Teachers",
       "fuente": "Education Week",
       "url": "https://www.edweek.org/technology/anthropic-launches-claude-for-teachers-why-some-critics-are-concerned/2026/07",
-      "es": "Merece leerse justo después del anuncio. Dos objeciones que me parecen serias: que se salta a los responsables del centro en la decisión de adoptar, y que un profesor no siempre puede consentir legalmente el tratamiento de datos de sus alumnos. Las dos aplican igual en España, con el RGPD en vez de FERPA.",
-      "en": "Worth reading straight after the announcement. Two objections that land: it routes around school leadership in the adoption decision, and a teacher often cannot legally consent to processing their students' data. Both apply here too, with GDPR instead of FERPA."
+      "es": "Claude for Teachers es gratis para docentes de K-12 en EE. UU., y esta pieza recoge dos objeciones que me parecen serias: que se salta a los responsables del centro en la decisión de adoptar, y que un profesor no siempre puede consentir legalmente el tratamiento de datos de sus alumnos. Las dos aplican igual en España, con el RGPD en vez de FERPA.",
+      "en": "Claude for Teachers is free for US K-12 teachers, and this piece raises two objections that land: it routes around school leadership in the adoption decision, and a teacher often cannot legally consent to processing their students' data. Both apply here too, with GDPR instead of FERPA."
     },
     {
       "fecha": "2026-06-25",
@@ -28,14 +44,6 @@ window.RADAR = {
       "url": "https://oes.fundacion-sm.org/eduforics/reimaginar-juntos-los-futuros/tecnologias-y-aprendizaje/la-ia-generativa-dificulta-el-aprendizaje-en-secundaria-evidencia-desde-china/",
       "es": "El dato incómodo del año: las notas de los deberes suben un 18% y el tiempo de hacerlos baja un 30%, pero las pruebas de evaluación caen un 20% en seis meses. No es un argumento para prohibir nada; es un argumento para mover la evaluación a donde se puede observar el proceso.",
       "en": "The uncomfortable number of the year: homework grades up 18% and time spent down 30%, but assessment scores down 20% within six months. Not an argument for banning anything. An argument for moving assessment to where you can watch the process."
-    },
-    {
-      "fecha": "2026-05-13",
-      "titulo": "El AI Act mueve las fechas: alto riesgo a diciembre de 2027",
-      "fuente": "Latham & Watkins",
-      "url": "https://www.lw.com/en/insights/ai-act-update-eu-resolves-to-change-rules-and-extend-deadlines",
-      "es": "Los sistemas de alto riesgo se van a diciembre de 2027 (agosto de 2028 los integrados en productos), pero las obligaciones de transparencia siguen en agosto de 2026 y el marcado de contenido generado pasa a diciembre de 2026. Si has parado un proyecto esperando al reglamento, revisa qué parte te aplica ya.",
-      "en": "High-risk systems move to December 2027 (August 2028 for safety components), but transparency obligations still land in August 2026 and generative-content watermarking moves to December 2026. If you paused a project waiting for the regulation, check which part already applies to you."
     },
     {
       "fecha": "2026-04-14",
