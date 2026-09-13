@@ -20,7 +20,10 @@ aquí.
   los dos idiomas.
 - Los `<option>` del formulario llevan también `data-l`; el JS los desactiva
   en lugar de ocultarlos (los navegadores no ocultan `<option>` de forma fiable).
-- Única dependencia externa: la fuente Instrument Serif de Google Fonts.
+- Dependencias externas: la fuente Instrument Serif de Google Fonts y el script
+  de GoatCounter (`diegodl-ambassador`, analítica anónima sin cookies, compartida
+  con `diego-thebridge.github.io`). El footer dice que se cuentan visitas así; si
+  se cambia de herramienta, cambiar también ese texto.
 - Los PDFs de las charlas **no** viven aquí: se enlazan a
   `https://diego-thebridge.github.io/`. Si se mueven, actualizar esos enlaces.
 
